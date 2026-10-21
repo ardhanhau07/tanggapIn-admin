@@ -1,0 +1,215 @@
+/* ===== Dashboard Ombudsman & Dinas =====
+   Dipakai bersama styles/style.css dan styles/laporan.css
+   (panel, filter, report-card, badge, dll. dipakai ulang dari laporan.css) */
+
+.admin {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.admin.single { grid-template-columns: 1fr; }
+.admin h1 { margin: 0; font-size: 1.8rem; line-height: 1.25; }
+.admin h2 { margin: 0 0 14px; font-size: 1.1rem; }
+.admin .report-list { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+
+header .header-right { display: flex; align-items: center; gap: 12px; }
+
+.role-pill {
+  padding: 4px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.demo-sw { display: flex; align-items: center; gap: 6px; color: #fff; font-size: 0.78rem; }
+.demo-sw select {
+  max-width: 200px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(15, 25, 45, 0.8);
+  color: #fff;
+  font: inherit;
+}
+
+/* Tombol umum */
+.btn {
+  padding: 9px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn:hover { background: rgba(255, 255, 255, 0.12); }
+.btn.primary { background: #ff0000; border-color: #ff0000; }
+.btn.primary:hover { background: #e00000; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn:focus-visible, .dinas-item:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* Daftar dinas (Ombudsman) */
+#dinasList { display: flex; flex-direction: column; gap: 8px; }
+
+.dinas-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  padding: 12px 14px;
+  text-align: left;
+  background: rgba(15, 25, 45, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+.dinas-item:hover { background: rgba(15, 25, 45, 0.75); }
+.dinas-item[aria-pressed="true"] { border-color: #ff0000; background: rgba(15, 25, 45, 0.9); }
+.dinas-sub { font-size: 0.75rem; color: rgba(255, 255, 255, 0.7); }
+.stale-flag { margin-top: 2px; font-size: 0.75rem; font-weight: 600; color: #fbbf24; }
+
+/* Toolbar pilih banyak */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 10px 14px;
+  background: rgba(15, 25, 45, 0.55);
+  border-radius: 12px;
+}
+.toolbar .spacer { flex: 1; }
+.pick { display: flex; align-items: center; gap: 8px; font-size: 0.88rem; cursor: pointer; }
+.pick input { width: 18px; height: 18px; accent-color: #ff0000; }
+
+/* Kartu laporan (tambahan) */
+.report-card h3.isi { font-size: 1rem; }
+.report-card a { color: #fff; }
+.report-note.stale { color: #fbbf24; font-weight: 600; }
+.report-note small { color: rgba(255, 255, 255, 0.7); }
+.qa {
+  padding: 8px 10px;
+  border-left: 3px solid #7cb7ff;
+  border-radius: 6px;
+  background: rgba(124, 183, 255, 0.1);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+.qa.answered { border-color: #4ade80; background: rgba(74, 222, 128, 0.1); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+
+.banner {
+  margin: 0 0 16px;
+  padding: 10px 14px;
+  border: 1px solid rgba(124, 183, 255, 0.4);
+  border-radius: 12px;
+  background: rgba(124, 183, 255, 0.15);
+  font-size: 0.9rem;
+}
+
+.demo-note { margin: 24px 0 0; font-size: 0.78rem; color: rgba(255, 255, 255, 0.65); }
+.demo-note button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: #fff;
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Dialog */
+dialog.dlg {
+  width: min(520px, calc(100% - 24px));
+  max-height: 90dvh;
+  padding: 0;
+  overflow: auto;
+  color: #fff;
+  color-scheme: dark;
+  background: #121a2c;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+dialog.dlg::backdrop { background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(6px); }
+.dlg-form { display: flex; flex-direction: column; gap: 14px; padding: 22px; }
+.dlg-form h2 { margin: 0; font-size: 1.2rem; }
+.dlg-intro { margin: 0; font-size: 0.88rem; line-height: 1.5; color: rgba(255, 255, 255, 0.8); overflow-wrap: anywhere; }
+.dlg-field { display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; font-weight: 600; }
+.dlg-field input, .dlg-field textarea {
+  padding: 10px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font: inherit;
+  font-weight: 400;
+}
+.dlg-field textarea { resize: vertical; }
+.dlg-field small { font-weight: 400; color: rgba(255, 255, 255, 0.65); }
+.dlg-err { margin: 0; min-height: 1.2em; font-size: 0.84rem; color: #fca5a5; }
+.dlg-actions { display: flex; justify-content: flex-end; gap: 10px; }
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 2000;
+  max-width: calc(100% - 32px);
+  padding: 10px 18px;
+  background: #fff;
+  color: #111;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  transform: translate(-50%, 20px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+/* Responsif */
+@media (max-width: 900px) {
+  .admin { grid-template-columns: 1fr; }
+  #dinasList { flex-direction: row; overflow-x: auto; padding-bottom: 4px; }
+  .dinas-item { min-width: 230px; flex-shrink: 0; }
+  .demo-sw span { display: none; }
+}
+
+@media (max-width: 480px) {
+  .admin h1 { font-size: 1.4rem; }
+  .admin .report-list { grid-template-columns: 1fr; }
+  .role-pill { display: none; }
+  .demo-sw select { max-width: 130px; }
+  .toolbar .btn { width: 100%; }
+  .dlg-form { padding: 18px; }
+  .actions .btn { flex: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toast { transition: none; }
+}
+
+/* ===== Halaman login ===== */
+.login-wrap { display: flex; justify-content: center; width: 100%; padding-top: 40px; }
+.login-card { width: min(420px, 100%); }
+.login-card h1 { margin: 0; font-size: 1.6rem; }
+.login-card form { display: flex; flex-direction: column; gap: 14px; margin-top: 20px; }
+.login-btn { width: 100%; padding: 11px; }
+.demo-accounts { margin-top: 20px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.8); }
+.demo-accounts summary { cursor: pointer; }
+.demo-accounts ul { margin: 8px 0 0; padding-left: 18px; line-height: 1.7; }

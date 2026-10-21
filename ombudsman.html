@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel Ombudsman - TanggapIn</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/laporan.css" />
+    <link rel="stylesheet" href="styles/admin.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/logo.webp" />
+  </head>
+  <body>
+    <header>
+      <div class="header-left">
+        <img src="assets/images/icons/logo.webp" alt="Logo" class="logo" />
+        <div class="logo-title">
+          <h1 class="header-title">TanggapIn</h1>
+          <p class="header-subtitle">Panel Ombudsman</p>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="role-pill">Ombudsman · Superadmin</span>
+        <a href="index.html" id="logout" class="btn-lapor">
+          <span>Keluar</span>
+          <span class="btn-icon">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <div class="admin">
+        <aside class="panel" aria-label="Daftar dinas">
+          <h2>Daftar Dinas</h2>
+          <div id="dinasList"></div>
+        </aside>
+
+        <section class="panel" aria-live="polite">
+          <h1 id="dinasTitle"></h1>
+          <p class="laporan-lead" id="dinasSummary"></p>
+          <div class="filter" id="filter" role="group" aria-label="Filter status laporan"></div>
+          <div class="toolbar" id="toolbar"></div>
+          <div class="report-list" id="reportList"></div>
+          <p class="demo-note">
+            Data contoh disimpan di browser ini.
+            <button type="button" id="resetDemo">Reset data demo</button>
+          </p>
+        </section>
+      </div>
+    </main>
+
+    <script src="scripts/admin-core.js"></script>
+    <script src="scripts/ombudsman.js"></script>
+  </body>
+</html>
