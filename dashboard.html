@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - TanggapIn</title>
+    <link rel="stylesheet" href="styles/admin.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/icons/logo.webp" />
+  </head>
+  <body class="app">
+    <div class="shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <img src="assets/images/icons/logo.webp" alt="" />
+          <span>TanggapIn</span>
+        </div>
+        <p class="role-label" id="roleLabel"></p>
+        <nav class="nav" id="nav" aria-label="Menu utama"></nav>
+      </aside>
+
+      <div class="main">
+        <header class="topbar">
+          <button type="button" class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false">☰</button>
+          <p class="welcome">Selamat datang, <strong id="whoName"></strong></p>
+          <div class="topbar-right">
+            <span class="avatar" id="avatar" aria-hidden="true"></span>
+            <button type="button" class="btn" id="logout">Keluar</button>
+          </div>
+        </header>
+        <main class="content" id="content"></main>
+      </div>
+    </div>
+
+    <div class="scrim" id="scrim"></div>
+    <aside class="drawer" id="drawer" role="dialog" aria-label="Detail laporan" aria-hidden="true"></aside>
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4"></script>
+    <script src="scripts/config.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>
