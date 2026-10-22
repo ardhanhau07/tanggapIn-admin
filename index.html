@@ -1,49 +1,39 @@
 <!doctype html>
 <html lang="id">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Masuk Panel Admin - TanggapIn</title>
-    <link rel="stylesheet" href="styles/style.css" />
-    <link rel="stylesheet" href="styles/laporan.css" />
-    <link rel="stylesheet" href="styles/admin.css" />
-    <link rel="icon" type="image/x-icon" href="assets/images/icons/logo.webp" />
+    <link rel="stylesheet" href="styles/admin.css" /><link rel="icon" type="image/x-icon" href="assets/images/icons/logo.webp" />
   </head>
-  <body>
-    <main>
-      <div class="login-wrap">
-        <section class="panel login-card">
-          <h1>Masuk Panel Admin</h1>
-          <p class="laporan-lead">Khusus Ombudsman dan dinas terkait.</p>
-
-          <form id="loginForm" novalidate>
-            <label class="dlg-field">
-              <span>Email</span>
-              <input type="email" id="email" autocomplete="username" required />
-            </label>
-            <label class="dlg-field">
-              <span>Kata sandi</span>
-              <input type="password" id="password" autocomplete="current-password" required />
-            </label>
-            <p class="dlg-err" id="loginErr" role="alert"></p>
-            <button type="submit" class="btn primary login-btn">Masuk</button>
-          </form>
-
-          <!-- DEMO: hapus bagian ini di produksi -->
-          <details class="demo-accounts">
-            <summary>Akun demo (kata sandi: demo1234)</summary>
-            <ul>
-              <li>ombudsman@tanggapin.demo (Ombudsman)</li>
-              <li>dpu@tanggapin.demo (Dinas PU dan Penataan Ruang)</li>
-              <li>dlh@tanggapin.demo (Dinas Lingkungan Hidup)</li>
-              <li>dishub@tanggapin.demo (Dinas Perhubungan)</li>
-              <li>dinkes@tanggapin.demo (Dinas Kesehatan)</li>
-            </ul>
-          </details>
-        </section>
-      </div>
-    </main>
-
+  <body class="login-page">
+    <section class="login-card">
+      <div class="header-left brand">
+          <img src="assets/images/icons/logo.webp" alt="Logo" class="logo" />
+          <div class="logo-title">
+            <div class="header-title">Tanggap<span>In</span></div>
+            <p class="header-subtitle">Sistem Pengaduan Publik Berbasis Agentic AI</p>
+          </div>
+        </div>
+      <h1>Masuk Panel Admin</h1>
+      <p class="lead">Khusus Ombudsman dan dinas terkait.</p>
+      <form id="loginForm" novalidate>
+        <label class="dlg-field"><span>Email</span><input type="email" id="email" autocomplete="username" required /></label>
+        <label class="dlg-field"><span>Kata sandi</span><input type="password" id="password" autocomplete="current-password" required /></label>
+        <p class="dlg-err" id="loginErr" role="alert"></p>
+        <button type="submit" class="btn primary login-btn">Masuk</button>
+      </form>
+      <!-- DEMO: hapus bagian ini di produksi -->
+      <details class="demo-accounts">
+        <summary>Akun demo (kata sandi: demo1234)</summary>
+        <ul>
+          <li>ombudsman@tanggapin.demo (Ombudsman)</li>
+          <li>dpu@tanggapin.demo (Dinas PU dan Penataan Ruang)</li>
+          <li>dlh@tanggapin.demo (Dinas Lingkungan Hidup)</li>
+          <li>dishub@tanggapin.demo (Dinas Perhubungan)</li>
+          <li>dinkes@tanggapin.demo (Dinas Kesehatan)</li>
+        </ul>
+      </details>
+    </section>
     <script src="scripts/admin-core.js"></script>
     <script src="scripts/login.js"></script>
   </body>
